@@ -1,0 +1,44 @@
+body {
+    font-family: 'Exo 2', sans-serif;
+    background-image: url("./images/background2.jpg")
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.section-title {
+    font-size: 200%;
+}
+
+.main-section-title {
+    font-size: 300%;
+    text-align: center;
+}
+
+.character {
+    display: inline-block;
+    border-style: solid;
+    border-color: green;
+    border-width: 3px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.character-image {
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.character-name {
+    text-align: center;
+}
+
+.character-health {
+    text-align: center;
+}
+
