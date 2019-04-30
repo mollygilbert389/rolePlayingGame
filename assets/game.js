@@ -1,34 +1,45 @@
 $(document).ready(function(){
+    $("#restart-section").hide();
+    $("#availible-to-attack-section").hide();
     var characters = {
-        "Sea Monster": {
-            name: "Sea Monster",
-            health: 120,
-            attack: 8,
-            imageUrl: "./assets/images/monster1.jpg",
-            enemeyAttackBack: 15
-        },
-
-        "Earth Monster": {
-            name: "Earth Monster",
+        "Nasha, King in Valley of the Mists": {
+            name: "Nasha, King in Valley of the Mists",
             health: 100,
-            attack: 14,
-            imageUrl: "./assets/images/monster3.jpg",
-            enemeyAttackBack: 5
+            attack: 7,
+            imageUrl: "./assets/images/monster15.jpg",
+            enemeyAttackBack: 8
         },
 
-        "Wind Monster": {
-            name: "Wind Monster",
+        "Keter, Emination of the Crown": {
+            name: "Keter, Emination of the Crown",
+            health: 130,
+            attack: 5,
+            imageUrl: "./assets/images/monster14.jpg",
+            enemeyAttackBack: 10
+        },
+
+        "Binah, Emination of Knowledge": {
+            name: "Binah, Emination of Knowledge",
             health: 150,
             attack: 8,
-            imageUrl: "./assets/images/monster4.jpg",
+            imageUrl: "./assets/images/monster10.jpg",
             enemeyAttackBack: 5
         },
 
-        "Rock Monster": {
-            name: "Rock Monster",
-            health: 180,
+        "Chesed, Emination of Empathy": {
+            name: "Chesed, Emination of Empathy",
+            health: 120,
+            attack: 9,
+            imageUrl: "./assets/images/monster9.jpg",
+            enemeyAttackBack: 30
+        },
+
+        "Makkuth, Emination of the Kingdom": {
+            name: "Makkuth, Emination of the Kingdom",
+            health: 170,
             attack: 7,
-            imageUrl: "./assets/images/monster5.jpg",
+            imageUrl: "./assets/images/monster7.jpg",
+            enemeyAttackBack: 15
         }
     };
 
@@ -69,6 +80,7 @@ var renderMessage = function(message) {
 
 var renderCharacters = function(charObj, areaRender) {
     if (areaRender === "#characters-section") {
+        $("#characters-section").empty()
         $(areaRender).empty();
         for (var key in charObj) {
             if(charObj.hasOwnProperty(key)) {
@@ -123,13 +135,14 @@ var renderCharacters = function(charObj, areaRender) {
 }
 
     var restartGame = function(inputEndGame) {
+        $("#restart-section").show();
         var restart = $("<button>Restart</button>").click(function(){
             location.reload();
         })
         var gameState = $("<div id='restart'></div>").text(inputEndGame)
 
-        $("body").append(gameState);
-        $("body").append(restart)
+        $("#restart-section").append(gameState);
+        $("#restart-section").append(restart)
 
 }
 
@@ -148,6 +161,7 @@ $(document).on("click", ".character", function(){
 
          console.log(combatants)
          $("#characters-section").hide();
+         $("#availible-to-attack-section").show();
 
          renderCharacters(currSelectedCharacter, "#selected-character");
          renderCharacters(combatants, "#availible-to-attack-section");
@@ -159,7 +173,7 @@ $("#attack-button").on("click", function(){
         var attackMessage = "You attacked " + currDefender.name + "for " + (currSelectedCharacter.attack * turnCounter) + " damage.";
         var counterAttackMessage = currDefender.name + " attacked you back for " + currDefender.enemeyAttackBack + " damage.";
         renderMessage("clearMessage")
-    currDefender.health -= (currSelectedCharacter.attack * turnCounter)
+    currDefender.health -= currSelectedCharacter.attack * turnCounter
         if (currDefender.health > 0) {
             renderCharacters(currDefender, "playerDamage");
             renderMessage(attackMessage)
@@ -169,14 +183,14 @@ $("#attack-button").on("click", function(){
 
             if(currSelectedCharacter.health <= 0) {
                 renderMessage("clearMessage")
-                renderMessage("You have been defeated. The gods will not grace your with life.")
+                renderMessage("You have been defeated. The gods will not let you keep your life.")
                 $("#attack-button").unbind("click"); 
             }
         }
         else {
             renderCharacters(currDefender, "enemyDefeated")
             killCount++;
-            if (killCount >= 3) {
+            if (killCount >= combatants.length) {
                 renderMessage("clearMessage");
                 restartGame("You have proved yourself to the gods.")
                
@@ -184,8 +198,6 @@ $("#attack-button").on("click", function(){
         }
 
     }
-
-
     turnCounter++
 
 })
