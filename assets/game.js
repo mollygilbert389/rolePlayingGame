@@ -183,7 +183,7 @@ $("#attack-button").on("click", function(){
 
             if(currSelectedCharacter.health <= 0) {
                 renderMessage("clearMessage")
-                renderMessage("You have been defeated. The gods will not let you keep your life.")
+                restartGame("You have been defeated. The gods will not let you keep your life.")
                 $("#attack-button").unbind("click"); 
             }
         }
