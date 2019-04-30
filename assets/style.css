@@ -1,12 +1,15 @@
 body {
     font-family: 'Exo 2', sans-serif;
-    background-image: url("./images/background2.jpg")
+    background-image: url("./images/background2.jpg");
+    color: white;
+    text-align: center;
 }
 
 img {
-    height: 100px;
-    width: 100px;
-    border-radius: 10px;
+    height: 200px;
+    width: 200px;
+    padding: 5px;
+    
 }
 
 .section-title {
@@ -20,11 +23,15 @@ img {
 
 .character {
     display: inline-block;
-    border-style: solid;
-    border-color: green;
-    border-width: 3px;
     cursor: pointer;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.651);
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+    align-content: center;
+    border-radius: 10px;
+    padding: 10px;
+
 }
 
 .character-image {
@@ -42,3 +49,22 @@ img {
     text-align: center;
 }
 
+#selected-character-section {
+    float: left;
+    margin-left: 30px;
+}
+
+#action {
+    float: right;
+    margin-right: 30px;
+}
+
+#fight-section {
+    height: 100px;
+    width: 500px;
+    position: absolute;
+    left: 38%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -50px;
+}
