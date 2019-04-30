@@ -9,7 +9,7 @@ img {
     height: 300px;
     width: 200px;
     padding: 5px;
-    
+    border-radius: 8px;
 }
 
 .section-title {
@@ -31,6 +31,7 @@ img {
     align-content: center;
     border-radius: 10px;
     padding: 10px;
+    margin-bottom: 10px;
 
 }
 
@@ -65,9 +66,9 @@ img {
     height: 100px;
     width: 500px;
     position: absolute;
-    left: 38%;
+    left: 35%;
     margin-left: -50px;
-    top: 65%;
+    top: 75%;
     margin-top: -50px;
 }
 
@@ -88,8 +89,15 @@ button {
     background-color: rgb(5, 45, 71);
     border-radius: 8px;
     border-color: rgb(5, 45, 71);
+    padding: 20px;
+}
+
+button:hover{
+    background-color: rgb(53, 118, 216);
+    color: white;
 }
 
 #availible-to-attack-section {
-    height: 300px;
+    height: 350px;
+    margin-bottom: 10px;
 }

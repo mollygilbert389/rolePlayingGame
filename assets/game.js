@@ -2,13 +2,13 @@ $(document).ready(function(){
     $("#restart-section").hide();
     $("#availible-to-attack-section").hide();
     var characters = {
-        "Nasha, King in Valley of the Mists": {
-            name: "Nasha, King in Valley of the Mists",
-            health: 100,
-            attack: 7,
-            imageUrl: "./assets/images/monster15.jpg",
-            enemeyAttackBack: 8
-        },
+        // "Nasha, King in Valley of the Mists": {
+        //     name: "Nasha, King in Valley of the Mists",
+        //     health: 100,
+        //     attack: 7,
+        //     imageUrl: "./assets/images/monster15.jpg",
+        //     enemeyAttackBack: 8
+        // },
 
         "Keter, Emination of the Crown": {
             name: "Keter, Emination of the Crown",
