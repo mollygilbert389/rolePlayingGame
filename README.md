@@ -4,4 +4,5 @@ This is a simple role playing game created with HTML, CSS, and JQuery. The user 
 
 Try it yourself here: https://mollygilbert389.github.io/rolePlayingGame/
 
-![Screen Shot 2019-04-29 at 9 40 50 PM](https://user-images.githubusercontent.com/29104770/56938432-8c83e100-6ac7-11e9-9f53-a07cae4cd01d.png)
+![image](https://user-images.githubusercontent.com/29104770/63704224-2c404a00-c7f0-11e9-84fa-95aab4f06eaa.png)
+
